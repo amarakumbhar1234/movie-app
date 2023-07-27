@@ -4,7 +4,7 @@ import SearchIcon from "./search.svg";
 
 //
 
-const API_URL = "http://www.omdbapi.com?apikey=f604271c";
+const API_URL = "https://www.omdbapi.com?apikey=f604271c";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -37,8 +37,8 @@ function App() {
       </div>
       {movies?.length > 0 ? (
         <div className="container">
-          {movies.map((movie) => (
-            <MovieCard movie={movie} />
+          {movies.map((movie, imdbID) => (
+            <MovieCard key={imdbID} movie={movie} />
           ))}
         </div>
       ) : (
